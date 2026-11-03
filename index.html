@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel Maverick V3</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #10131a;
+  color: white;
+}
+
+header {
+  background: #191f2b;
+  padding: 22px;
+  border-bottom: 2px solid #d5a33c;
+}
+
+header h1 {
+  margin: 0;
+  color: #e6b84b;
+}
+
+header p {
+  color: #aaa;
+}
+
+main {
+  padding: 20px;
+}
+
+.menu {
+  display: grid;
+  gap: 15px;
+}
+
+button {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #3a4352;
+  border-radius: 12px;
+  background: #202938;
+  color: white;
+  font-size: 17px;
+  text-align: left;
+  cursor: pointer;
+}
+
+button:active {
+  background: #35445b;
+}
+
+.tela {
+  display: none;
+}
+
+.tela.ativa {
+  display: block;
+}
+
+.voltar {
+  margin-bottom: 20px;
+  background: #333d4e;
+}
+
+.destaque {
+  color: #e6b84b;
+}
+
+.card {
+  background: #202938;
+  border: 1px solid #394457;
+  border-radius: 12px;
+  padding: 18px;
+  margin-top: 15px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>PAINEL MAVERICK</h1>
+  <p>Versão 3.0 | Central de Controle</p>
+</header>
+
+<main>
+
+<section id="inicio" class="tela ativa">
+  <h2>Menu Principal</h2>
+
+  <div class="menu">
+    <button onclick="abrirTela('cabana')">
+      💉 Cabana de Injetáveis
+    </button>
+
+    <button onclick="abrirTela('estoque')">
+      📦 Estoque
+    </button>
+
+    <button onclick="abrirTela('config')">
+      ⚙️ Configurações
+    </button>
+  </div>
+</section>
+
+<section id="cabana" class="tela">
+  <button class="voltar" onclick="abrirTela('inicio')">
+    ← Voltar ao menu
+  </button>
+
+  <h2 class="destaque">💉 Cabana de Injetáveis</h2>
+
+  <div class="card">
+    <h3>Área de Injetáveis</h3>
+    <p>Bem-vindo à Cabana de Injetáveis do Painel Maverick.</p>
+    <p>Espaço reservado para os módulos desta seção.</p>
+  </div>
+</section>
+
+<section id="estoque" class="tela">
+  <button class="voltar" onclick="abrirTela('inicio')">
+    ← Voltar ao menu
+  </button>
+  <h2>📦 Estoque</h2>
+  <div class="card">
+    <p>Módulo de estoque em desenvolvimento.</p>
+  </div>
+</section>
+
+<section id="config" class="tela">
+  <button class="voltar" onclick="abrirTela('inicio')">
+    ← Voltar ao menu
+  </button>
+  <h2>⚙️ Configurações</h2>
+  <div class="card">
+    <p>Configurações do Painel Maverick.</p>
+  </div>
+</section>
+
+</main>
+
+<script>
+function abrirTela(id) {
+  document.querySelectorAll('.tela').forEach(tela => {
+    tela.classList.remove('ativa');
+  });
+
+  document.getElementById(id).classList.add('ativa');
+}
+</script>
+
+</body>
+</html>
